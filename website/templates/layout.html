@@ -19,46 +19,47 @@
     {% if title %}
         <title>{{ title }}</title>
     {% else %}
-        <title>cs50 Todo</title>
+        <title>CS50 Todo</title>
     {% endif %}
 
 </head>
 <body>
     <noscript>Your browser either does not support JavaScript or maybe you disabled it.</noscript>
 
-    <div class="wrapper">
-        <div class="sidebar">
-            <h2>Sidebar</h2>
-            <ul>
-                <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
-                <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
-                <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
-                <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
-                <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
-            </ul> 
-            <div class="social_media">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+    <nav>
+        <div class="nav-content">
+        <div class="logo">
+            <a href="#">CS50 To-Do</a>
         </div>
-        <div class="main_content">
-            <div class="header">Welcome!! Have a nice day.</div>  
-            <div class="info">
-                <div>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus?
-                </div>
-                <div>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus?
-                </div>
-                <div>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus?
-                </div>
-            </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Social Medias</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
+        </ul>
         </div>
-    </div>
+        <div class="center-text">
+            <div class="waves"></div>
+            <h1>The <strong>best</strong> way <br> <span class="colored-text">to get things done.</span></h1>
+        </div>
+    </nav>
+
+    {% block nav %} {% endblock %}
+
+    <section class="home"></section>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0E2431" fill-opacity="1" d="M0,192L80,186.7C160,181,320,171,480,181.3C640,192,800,224,960,234.7C1120,245,1280,235,1360,229.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+    </svg>
+
+    <main>
+        <div class="text">
+            <h2>Sticky Navigation Bar</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed culpa minus ducimus nostrum aspernatur qui odit assumenda consectetur dolorum autem. Impedit aperiam nemo fuga numquam molestias sit quaerat quae doloribus est facilis ab, asperiores voluptatum dolore? Dignissimos porro corporis, veniam esse animi pariatur vitae quas est, amet minima et ratione tenetur earum officiis fugiat saepe eius nisi dolor, iusto voluptas obcaecati nam! Facere excepturi quibusdam, magni fugit quia, accusantium eum dolorum id dolores. Enim consectetur tempore distinctio, natus dolore incidunt. Repellendus ut natus, sit at inventore, reiciendis. Praesentium, tempore. Laborum consequuntur, illo voluptatem nobis rem molestias corporis laboriosam sint officiis, inventore atque, repellendus. Blanditiis molestiae minima consequuntur et accusamus illum, laboriosam placeat perferendis sed. Maiores eos laboriosam quas eius ratione dignissimos laborum doloremque, praesentium obcaecati cum consectetur magnam accusamus, esse, corporis aliquid pariatur mollitia corrupti cupiditate ipsa iure enim provident. Earum, voluptate! Similique quas veniam voluptas, maiores perspiciatis error voluptatum!</p>
+            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima libero consequatur necessitatibus voluptatibus vel, ut asperiores magnam velit, eum veritatis natus, dolorum sit ipsum quidem laborum! Facilis officia itaque, explicabo harum illum, repellat nihil corporis! Dolor, libero vero, consequuntur sed necessitatibus corporis. Facilis autem natus animi pariatur quaerat rerum nemo quibusdam veritatis provident error nostrum ratione dolore officiis non amet, quidem dolores eaque sint blanditiis odio porro ut, quam soluta. Necessitatibus, aperiam eum doloremque voluptate qui aliquid consequatur aspernatur debitis expedita unde vitae quia officiis, delectus, possimus ratione ex rerum dignissimos maxime molestiae asperiores. Tempora recusandae debitis exercitationem quo facere reprehenderit tenetur, dolore laboriosam repellat modi. Magnam ratione iste quo perspiciatis explicabo deserunt temporibus quaerat inventore quod accusantium atque, dolores commodi nobis distinctio, fugit illum, soluta quisquam est in omnis! Recusandae incidunt voluptatem, consequuntur doloremque! Nisi incidunt, iure quidem dolores odit sint, ut quam. Ipsum, maiores doloremque velit numquam quisquam.</p>
+        </div>
+    </main>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -69,6 +70,7 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
+
     <script src="../static/script.js" defer></script>
     {% block content %} {% endblock %}
 </body>
