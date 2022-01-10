@@ -12,12 +12,17 @@ class RegisterUser(FlaskForm):
     
     confirm_password  = PasswordField('ConfirmPassword', validators=[DataRequired(), EqualTo('password')], render_kw={'placeholder': 'Confirm Password'})
     
-    policy = BooleanField('I accept all terms & conditions.', validators=[DataRequired()])
     submit = SubmitField('Sign Up')
     
     
 class LoginUser(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'placeholder': 'Email'})
+    
+    password = PasswordField('Password', validators=[DataRequired()], render_kw={'placeholder': 'Password'})
+    
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Log in')
+    
+
+class AddTask(FlaskForm):
+    add_task = SubmitField('Add Task', validators=[DataRequired()], render_kw={'placeholder': 'Add Task'})
