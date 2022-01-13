@@ -1,11 +1,13 @@
+import re
 from website import app, db, bcrypt
 from website.forms import RegisterUser, LoginUser, AddTask
-from website.models import User
-from flask import render_template, request, redirect, url_for, flash
+from website.models import User, Task    
+from flask import render_template, request, redirect, url_for, flash, session
 from flask_login import login_user, current_user, logout_user, login_required
 
-@app.route('/home')
+
 @app.route('/')
+@login_required
 def index():
     return render_template('layout.html')
 
@@ -30,7 +32,7 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('layout'))
+        return redirect(url_for('index'))
     
     form = LoginUser()
     if form.validate_on_submit():
@@ -51,7 +53,16 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/to-do-list')
-def todo_list():
-    task = AddTask()
-    return render_template('todo_list.html', task=task)
+@app.route('/tasks', methods=['GET', 'POST'])
+@login_required
+def tasks():
+    form = AddTask()
+
+    if form.validate_on_submit():
+        task = Task(task_description=form.task_description.data, author=current_user)
+        db.session.add(task)
+        db.session.commit()
+        return redirect(url_for('todo_list'))
+        
+    tasks = Task.query.filter_by(author=current_user).all()
+    return render_template('tasks.html', tasks=tasks, form=form)

@@ -46,6 +46,7 @@ body{
 }
 
 form .input-box .input{
+    font-family: 'Poppins', sans-serif;
     height: 100%;
     width: 100%;
     outline: none;

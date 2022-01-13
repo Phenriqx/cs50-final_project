@@ -1,0 +1,102 @@
+@import url('config.css');
+
+body {
+    margin-top: 50px;
+    background-color: #f4f5f8;
+}
+
+h2 {
+    justify-content: center;
+    text-align: center;
+}
+
+.add-tasks {
+    margin-top: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.add-tasks button {
+    margin-left: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.add-tasks .task-description {
+    height: 42px;
+    width: 375px;
+    border-radius: 5px;
+}
+
+#add-task {
+    margin-left: 10px;
+}
+
+.input{
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #C7BEBE;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.input:focus,
+.input:valid{
+    border-color: #4070f4;
+}
+
+.button {
+    margin-top: 4px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #C7BEBE;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+ion-icon {
+    font-size: 32px;
+    color: #11101d;
+}
+
+.show-tasks {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    margin-right: 32px;
+    height: 42px;
+    width: 375px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    vertical-align: middle;
+    border: 1.5px solid #C7BEBE;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+#task-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    vertical-align: middle;
+}

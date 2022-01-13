@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.fields.simple import TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 
@@ -25,4 +26,6 @@ class LoginUser(FlaskForm):
     
 
 class AddTask(FlaskForm):
-    add_task = SubmitField('Add Task', validators=[DataRequired()], render_kw={'placeholder': 'Add Task'})
+    task_description = StringField('Task Description', validators=[DataRequired()], render_kw={'placeholder': 'Task Description'})
+    
+    submit = SubmitField('Add Task')

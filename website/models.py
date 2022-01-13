@@ -13,5 +13,16 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     
+    tasks = db.relationship('Task', backref='author', lazy=True)
+    
     def __repr__(self):
         return f'User({self.username}, {self.email})'
+    
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    task_description = db.Column(db.String(100), nullable=False)
+    completed = db.Column(db.Boolean, nullable=False, default=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
+    def __repr__(self):
+        return f'Task({self.task}, {self.completed})'
